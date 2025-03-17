@@ -1,0 +1,23 @@
+{
+  "name": "taskplanner",
+  "version": "1.0.0",
+  "description": "El objetivo de esta práctica es desarrollar **TaskPlanner**, una aplicación web que permita a los usuarios gestionar sus tareas y eventos diarios, integrando los conocimientos adquiridos en el módulo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olista94/TaskPlanner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olista94/TaskPlanner/issues"
+  },
+  "homepage": "https://github.com/olista94/TaskPlanner#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
