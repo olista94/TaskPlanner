@@ -3,52 +3,24 @@ const weatherOutput = document.getElementById("weather-output");
 const weatherSuggestions = document.getElementById("weather-suggestions");
 const weatherBtn = document.getElementById("weather-btn");
 
-const cities = [
-  "Madrid", "Barcelona", "Valencia", "Sevilla",
-  "Bilbao", "Zaragoza", "Málaga", "Murcia",
-  "Toledo", "Salamanca", "Granada", "Cádiz"
-];
-
 export async function loadWeather(city = "Madrid") {
-  weatherOutput.textContent = "Cargando clima...";
+  weatherOutput.textContent = "Loading weather...";
 
   try {
-    const res = await fetch(`https://wttr.in/${city}?format=3`);
+    const res = await fetch(`https://wttr.in/${city}?format=4`);
     const text = await res.text();
     weatherOutput.textContent = text;
   } catch {
-    weatherOutput.textContent = "No se pudo obtener el clima.";
+    weatherOutput.textContent = "Weather was not available.";
   }
 }
 
 export function initWeather() {
-  loadWeather(); // clima por defecto
+  loadWeather();
 
   weatherBtn.addEventListener("click", () => {
     const city = weatherInput.value.trim();
     if (city) loadWeather(city);
-  });
-
-  weatherInput.addEventListener("input", () => {
-    const query = weatherInput.value.trim().toLowerCase();
-    if (query.length === 0) {
-      weatherSuggestions.classList.add("hidden");
-      return;
-    }
-
-    const matches = cities.filter(c =>
-      c.toLowerCase().startsWith(query)
-    ).slice(0, 4);
-
-    if (matches.length === 0) {
-      weatherSuggestions.classList.add("hidden");
-      return;
-    }
-
-    weatherSuggestions.innerHTML = matches
-      .map(c => `<li>${c}</li>`)
-      .join("");
-    weatherSuggestions.classList.remove("hidden");
   });
 
   weatherSuggestions.addEventListener("click", (e) => {
