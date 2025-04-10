@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskPlanner</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🗓️ TaskPlanner</h1>
+  </header>
+
+  <!-- Weather -->
+  <section id="weather-section">
+    <div id="weather-container">
+      <div class="weather-search">
+        <input type="text" id="weather-location" placeholder="Enter a city name..." autocomplete="off" />
+        <button id="weather-btn" title="Search weather">🔍</button>
+      </div>
+      <ul id="weather-suggestions" class="hidden"></ul>
+      <pre id="weather-output">Loading weather...</pre>
+    </div>
+  </section>
+  
+  <!-- Useless fact -->
+  <section id="fact-section">
+    <h2>🤓 Random Useless Fact</h2>
+    <div id="fact-box">Loading fact...</div>
+    <button id="new-fact-btn" title="Get another fact">🔄</button>
+  </section>
+  
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button data-tab="task" class="active">Tasks</button>
+    <button data-tab="event">Events</button>
+  </div>
+
+  <main>
+    <!-- Form -->
+    <section id="form-section">
+      <h2 id="form-title">Add a task or event</h2>
+      <form id="entry-form">
+        <input type="text" id="title" placeholder="Title" required />
+        <textarea id="description" placeholder="Description" required></textarea>
+        <input type="date" id="task-date" style="display: block;" />
+        <input type="datetime-local" id="event-date" style="display: none;" />
+
+        <select id="status">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In progress</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <!-- Filter to task -->
+    <section id="filters">
+      <h3>Filter task by state:</h3>
+      <button data-filter="all">All</button>
+      <button data-filter="pending">Pending</button>
+      <button data-filter="in-progress">In progress</button>
+      <button data-filter="completed">Completed</button>
+    </section>
+
+    <!-- List -->
+    <section id="list-section">
+      <h2 id="list-title">Task list</h2>
+      <div id="entry-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy 2025 Oscar Lista Rivera | WE THE NORTH</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
