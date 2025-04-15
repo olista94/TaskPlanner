@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/x-icon" href="./assets/images/icon_task.png">
 </head>
+
 <body>
   <header>
     <h1>TaskPlanner</h1>
@@ -19,14 +21,15 @@
         <div class="weather-search">
           <input type="text" id="weather-location" placeholder="Enter a city name..." autocomplete="off" />
           <button id="weather-btn" title="Search weather">🔍</button>
-          <img id="weather-favorite" src="assets/images/fav.png" alt="favorite" title="Mark as favorite" style="cursor:pointer; width:24px; height:24px;" />
-        </div>        
+          <img id="weather-favorite" src="assets/images/fav.png" alt="favorite" title="Mark as favorite"
+            style="cursor:pointer; width:24px; height:24px;" />
+        </div>
         <ul id="weather-suggestions" class="hidden"></ul>
         <pre id="weather-output">Loading weather...</pre>
       </div>
     </div>
   </section>
-  
+
   <!-- Useless fact - También fuera del main -->
   <section id="fact-section" class="full-width">
     <div class="content-container">
@@ -83,5 +86,37 @@
   </footer>
 
   <script type="module" src="js/main.js"></script>
+
+  <!-- Modal de Edición -->
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Editar Entrada</h3>
+      <form id="modal-edit-form">
+        <input type="text" id="modal-edit-title" placeholder="Title" required />
+        <textarea id="modal-edit-description" placeholder="Description" required></textarea>
+        <input type="date" id="modal-edit-date" />
+        <input type="datetime-local" id="modal-edit-datetime" />
+        <select id="modal-edit-status">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button type="submit">Guardar Cambios</button>
+        <button type="button" id="close-edit-modal">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Eliminación -->
+  <div id="delete-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>¿Eliminar esta entrada?</h3>
+      <p id="delete-description"></p>
+      <button id="confirm-delete">Eliminar</button>
+      <button id="cancel-delete">Cancelar</button>
+    </div>
+  </div>
+
 </body>
+
 </html>

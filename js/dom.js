@@ -1,5 +1,3 @@
-import { deleteEntry } from "./taskManager.js";
-
 const listContainer = document.getElementById("entry-list");
 
 export function renderEntries(entries, mode) {
@@ -26,13 +24,15 @@ export function renderEntries(entries, mode) {
       </div>
     `;
 
-    card.querySelector(".delete").addEventListener("click", () => {
-      deleteEntry(entry.id);
-      renderEntries(JSON.parse(localStorage.getItem("taskplanner_entries")) || [], mode);
-    });
-
+    // Botón de edición: dispara evento personalizado
     card.querySelector(".edit").addEventListener("click", () => {
       const event = new CustomEvent("edit-entry", { detail: entry });
+      document.dispatchEvent(event);
+    });
+
+    // Botón de eliminación: dispara evento personalizado
+    card.querySelector(".delete").addEventListener("click", () => {
+      const event = new CustomEvent("delete-entry", { detail: entry });
       document.dispatchEvent(event);
     });
 
