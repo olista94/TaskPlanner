@@ -17,7 +17,7 @@ export function renderEntries(entries, mode) {
 
   filtered.forEach(entry => {
     const card = document.createElement("div");
-    card.className = "entry-card";
+    card.className = `entry-card ${entry.status}`;
 
     card.innerHTML = `
       <h3>${entry.title}</h3>

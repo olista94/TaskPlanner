@@ -5,7 +5,7 @@ export async function translateWithGoogle(text, targetLang = "es") {
       );
   
       const data = await response.json();
-      return data[0]?.[0] || text; // Accede al texto, si existe, o devuelve el texto original
+      return data[0]?.[0] || text; // Return original text if translation fails or is void
     } catch (error) {
       console.error("Error al traducir con Google:", error);
       return text;

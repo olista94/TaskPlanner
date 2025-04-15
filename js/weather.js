@@ -13,7 +13,7 @@ function updateFavoriteStar(city) {
   }
 }
 
-// Load weaher from localstorage or default to Madrid
+// Load weather from localstorage or default
 export async function loadWeather(city = null) {
   const favCity = localStorage.getItem("favoriteCity");
   const selectedCity = city || favCity || "Madrid";

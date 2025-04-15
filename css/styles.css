@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 
-/* Secciones de ancho completo */
+/* Complete width */
 .full-width-section {
   width: 100vw;
   position: relative;
@@ -123,7 +123,7 @@ body {
   background-color: #f3f3f3;
 }
 
-/* Contenido principal */
+/* -- Main Content -- */
 main {
   flex: 1;
   max-width: 800px;
@@ -269,6 +269,17 @@ form button:hover {
 .actions button.delete {
   background-color: #dc3545;
   color: #fff;
+}
+
+/* -- Task State -- */
+.entry-card.pending {
+  border-left: 5px solid #ffc107;
+}
+.entry-card.in-progress {
+  border-left: 5px solid #007bff;
+}
+.entry-card.completed {
+  border-left: 5px solid #28a745;
 }
 
 /* -- Buttons -- */
