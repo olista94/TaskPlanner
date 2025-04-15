@@ -11,23 +11,27 @@
     <h1>TaskPlanner</h1>
   </header>
 
-  <!-- Weather -->
-  <section id="weather-section">
-    <div id="weather-container">
-      <div class="weather-search">
-        <input type="text" id="weather-location" placeholder="Enter a city name..." autocomplete="off" />
-        <button id="weather-btn" title="Search weather">🔍</button>
+  <!-- Weather - Ahora fuera del main -->
+  <section id="weather-section" class="full-width">
+    <div class="content-container">
+      <div id="weather-container">
+        <div class="weather-search">
+          <input type="text" id="weather-location" placeholder="Enter a city name..." autocomplete="off" />
+          <button id="weather-btn" title="Search weather">🔍</button>
+        </div>
+        <ul id="weather-suggestions" class="hidden"></ul>
+        <pre id="weather-output">Loading weather...</pre>
       </div>
-      <ul id="weather-suggestions" class="hidden"></ul>
-      <pre id="weather-output">Loading weather...</pre>
     </div>
   </section>
   
-  <!-- Useless fact -->
-  <section id="fact-section">
-    <h2>Random Useless Fact</h2>
-    <div id="fact-box">Loading fact...</div>
-    <button id="new-fact-btn" title="Get another fact">🔄</button>
+  <!-- Useless fact - También fuera del main -->
+  <section id="fact-section" class="full-width">
+    <div class="content-container">
+      <h2>Random Useless Fact</h2>
+      <div id="fact-box">Loading fact...</div>
+      <button id="new-fact-btn" title="Get another fact">🔄</button>
+    </div>
   </section>
 
   <!-- Tabs -->
