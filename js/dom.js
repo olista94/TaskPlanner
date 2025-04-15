@@ -7,7 +7,7 @@ export function renderEntries(entries, mode) {
 
   const filtered = entries.filter(e => e.type === mode);
   if (filtered.length === 0) {
-    listContainer.innerHTML = "<p>No hay elementos aún.</p>";
+    listContainer.innerHTML = "<p>No elements yet.</p>";
     return;
   }
 
@@ -18,11 +18,11 @@ export function renderEntries(entries, mode) {
     card.innerHTML = `
       <h3>${entry.title}</h3>
       <p>${entry.description}</p>
-      ${entry.date ? `<p><strong>Fecha:</strong> ${entry.date}</p>` : ""}
-      <p><strong>Estado:</strong> ${entry.status}</p>
+      ${entry.date ? `<p><strong>Date:</strong> ${entry.date}</p>` : ""}
+      <p><strong>State:</strong> ${entry.status}</p>
       <div class="actions">
-        <button class="edit" data-id="${entry.id}">✏️</button>
-        <button class="delete" data-id="${entry.id}">🗑️</button>
+        <button class="edit" data-id="${entry.id}" title="Edit">✏️</button>
+        <button class="delete" data-id="${entry.id}" title="Delete">🗑️</button>
       </div>
     `;
 
