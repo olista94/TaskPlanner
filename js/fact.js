@@ -9,7 +9,7 @@ export async function loadFact() {
     const data = await res.json();
     factBox.textContent = data.text;
   } catch {
-    factBox.textContent = "Couldn't load a fact right now 😢";
+    factBox.textContent = "Couldn't load a fact right now";
   }
 }
 

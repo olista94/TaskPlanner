@@ -2,12 +2,28 @@ const weatherInput = document.getElementById("weather-location");
 const weatherOutput = document.getElementById("weather-output");
 const weatherSuggestions = document.getElementById("weather-suggestions");
 const weatherBtn = document.getElementById("weather-btn");
+const weatherFavorite = document.getElementById("weather-favorite");
 
-export async function loadWeather(city = "Madrid") {
+function updateFavoriteStar(city) {
+  const fav = localStorage.getItem("favoriteCity");
+  if (fav === city) {
+    weatherFavorite.src = "/assets/images/fav_selected.png";
+  } else {
+    weatherFavorite.src = "/assets/images/fav.png";
+  }
+}
+
+// Función para cargar el tiempo, con ciudad por defecto desde localStorage
+export async function loadWeather(city = null) {
+  const favCity = localStorage.getItem("favoriteCity");
+  const selectedCity = city || favCity || "Madrid";
+  weatherInput.value = selectedCity;
+  updateFavoriteStar(selectedCity);
+
   weatherOutput.textContent = "Loading weather...";
 
   try {
-    const res = await fetch(`https://wttr.in/${city}?format=4`);
+    const res = await fetch(`https://wttr.in/${selectedCity}?format=4`);
     const text = await res.text();
     weatherOutput.textContent = text;
   } catch {
@@ -35,5 +51,19 @@ export function initWeather() {
     setTimeout(() => {
       weatherSuggestions.classList.add("hidden");
     }, 100);
+  });
+
+  // ⭐ Lógica de marcar/desmarcar ciudad favorita
+  weatherFavorite.addEventListener("click", () => {
+    const city = weatherInput.value.trim();
+    const currentFav = localStorage.getItem("favoriteCity");
+
+    if (currentFav === city) {
+      localStorage.removeItem("favoriteCity");
+      weatherFavorite.src = "/assets/images/fav.png";
+    } else {
+      localStorage.setItem("favoriteCity", city);
+      weatherFavorite.src = "/assets/images/fav_selected.png";
+    }
   });
 }
