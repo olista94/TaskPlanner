@@ -50,7 +50,7 @@ tabs.forEach(tab => {
     eventDateInput.style.display = currentTab === "event" ? "block" : "none";
     filterSection.classList.toggle("hidden", currentTab !== "task");
 
-    listTitle.textContent = currentTab === "event" ? "Events list" : "Tasks list";
+    listTitle.textContent = currentTab === "event" ? "Lista de eventos" : "Lista de tareas";
 
     editingId = null;
     form.reset();

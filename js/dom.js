@@ -1,11 +1,17 @@
 const listContainer = document.getElementById("entry-list");
 
+const statusLabels = {
+  "pending": "Pendiente",
+  "in-progress": "En progreso",
+  "completed": "Completado"
+};
+
 export function renderEntries(entries, mode) {
   listContainer.innerHTML = "";
 
   const filtered = entries.filter(e => e.type === mode);
   if (filtered.length === 0) {
-    listContainer.innerHTML = "<p>No elements yet.</p>";
+    listContainer.innerHTML = "<p>Ho hay elementos.</p>";
     return;
   }
 
@@ -16,11 +22,11 @@ export function renderEntries(entries, mode) {
     card.innerHTML = `
       <h3>${entry.title}</h3>
       <p>${entry.description}</p>
-      ${entry.date ? `<p><strong>Date:</strong> ${entry.date}</p>` : ""}
-      <p><strong>State:</strong> ${entry.status}</p>
+      ${entry.date ? `<p><strong>Fecha:</strong> ${entry.date}</p>` : ""}
+      <p><strong>Estado:</strong> ${statusLabels[entry.status] || entry.status}</p>
       <div class="actions">
-        <button class="edit" data-id="${entry.id}" title="Edit">✏️</button>
-        <button class="delete" data-id="${entry.id}" title="Delete">🗑️</button>
+        <button class="edit" data-id="${entry.id}" title="Editar">✏️</button>
+        <button class="delete" data-id="${entry.id}" title="Eliminar">🗑️</button>
       </div>
     `;
 

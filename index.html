@@ -25,7 +25,7 @@
             style="cursor:pointer; width:24px; height:24px;" />
         </div>
         <ul id="weather-suggestions" class="hidden"></ul>
-        <pre id="weather-output">Loading weather...</pre>
+        <pre id="weather-output">Cargando tiempo...</pre>
       </div>
     </div>
   </section>
@@ -33,50 +33,50 @@
   <!-- Useless fact -->
   <section id="fact-section" class="full-width">
     <div class="content-container">
-      <h2>Random Useless Fact</h2>
-      <div id="fact-box">Loading fact...</div>
-      <button id="new-fact-btn" title="Get another fact">🔄</button>
+      <h2>Dato curioso aleatorio</h2>
+      <div id="fact-box">Cargando dato...</div>
+      <button id="new-fact-btn" title="Obtén otro dato">🔄</button>
     </div>
   </section>
 
   <!-- Tabs -->
   <div class="tabs">
-    <button data-tab="task" class="active">Tasks</button>
-    <button data-tab="event">Events</button>
+    <button data-tab="task" class="active">Tareas</button>
+    <button data-tab="event">Eventos</button>
   </div>
 
   <main>
     <!-- Form -->
     <section id="form-section">
-      <h2 id="form-title">Add a task or event</h2>
+      <h2 id="form-title">Añade una tarea o evento</h2>
       <form id="entry-form">
-        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="title" placeholder="Título" required />
         <textarea id="description" placeholder="Description" required></textarea>
         <input type="date" id="task-date" style="display: block;" />
         <input type="datetime-local" id="event-date" style="display: none;" />
 
         <select id="status">
-          <option value="pending">Pending</option>
-          <option value="in-progress">In progress</option>
-          <option value="completed">Completed</option>
+          <option value="pending">Pendiente</option>
+          <option value="in-progress">En progreso</option>
+          <option value="completed">Completedo</option>
         </select>
 
-        <button type="submit">Save</button>
+        <button type="submit">Guardar</button>
       </form>
     </section>
 
     <!-- Filter -->
     <section id="filters">
-      <h3>Filter task by state:</h3>
-      <button data-filter="all" class="active">All</button>
-      <button data-filter="pending">Pending</button>
-      <button data-filter="in-progress">In progress</button>
-      <button data-filter="completed">Completed</button>
+      <h3>Estado:</h3>
+      <button data-filter="all" class="active">Todas</button>
+      <button data-filter="pending">Pendientes</button>
+      <button data-filter="in-progress">En progreso</button>
+      <button data-filter="completed">Completedas</button>
     </section>
 
     <!-- List -->
     <section id="list-section">
-      <h2 id="list-title">Task list</h2>
+      <h2 id="list-title">Lista de tareas</h2>
       <div id="entry-list"></div>
     </section>
   </main>
@@ -97,9 +97,9 @@
         <input type="date" id="modal-edit-date" />
         <input type="datetime-local" id="modal-edit-datetime" />
         <select id="modal-edit-status">
-          <option value="pending">Pending</option>
-          <option value="in-progress">In progress</option>
-          <option value="completed">Completed</option>
+          <option value="pending">Pendiente</option>
+          <option value="in-progress">En proreso</option>
+          <option value="completed">Completeda</option>
         </select>
         <button type="submit" class="btn btn-confirm">Guardar Cambios</button>
         <button type="button" id="close-edit-modal" class="btn btn-cancel">Cancelar</button>

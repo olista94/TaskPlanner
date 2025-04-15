@@ -20,14 +20,14 @@ export async function loadWeather(city = null) {
   weatherInput.value = selectedCity;
   updateFavoriteStar(selectedCity);
 
-  weatherOutput.textContent = "Loading weather...";
+  weatherOutput.textContent = "Cargando...";
 
   try {
     const res = await fetch(`https://wttr.in/${selectedCity}?format=4`);
     const text = await res.text();
     weatherOutput.textContent = text;
   } catch {
-    weatherOutput.textContent = "Weather was not available.";
+    weatherOutput.textContent = "El tiempo no está disponible en este momento.";
   }
 }
 
