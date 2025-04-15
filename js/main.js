@@ -22,7 +22,6 @@ const listTitle = document.getElementById("list-title");
 const editModal = document.getElementById("edit-modal");
 const deleteModal = document.getElementById("delete-modal");
 
-// Campos del modal de edición
 const modalForm = document.getElementById("modal-edit-form");
 const modalTitle = document.getElementById("modal-edit-title");
 const modalDesc = document.getElementById("modal-edit-description");
@@ -31,7 +30,6 @@ const modalDateTime = document.getElementById("modal-edit-datetime");
 const modalStatus = document.getElementById("modal-edit-status");
 const closeEditModalBtn = document.getElementById("close-edit-modal");
 
-// Modal de eliminación
 const deleteText = document.getElementById("delete-description");
 const confirmDeleteBtn = document.getElementById("confirm-delete");
 const cancelDeleteBtn = document.getElementById("cancel-delete");
@@ -83,7 +81,6 @@ form.addEventListener("submit", e => {
   refreshView();
 });
 
-// EDITAR DESDE MODAL
 document.addEventListener("edit-entry", e => {
   const entry = e.detail;
   editingId = entry.id;
@@ -105,7 +102,6 @@ document.addEventListener("edit-entry", e => {
   editModal.classList.remove("hidden");
 });
 
-// GUARDAR CAMBIOS DESDE MODAL
 modalForm.addEventListener("submit", e => {
   e.preventDefault();
 
@@ -124,12 +120,10 @@ modalForm.addEventListener("submit", e => {
   refreshView();
 });
 
-// CERRAR MODAL DE EDICIÓN
 closeEditModalBtn.addEventListener("click", () => {
   editModal.classList.add("hidden");
 });
 
-// ELIMINAR DESDE MODAL
 document.addEventListener("delete-entry", e => {
   const entry = e.detail;
   deletingId = entry.id;
@@ -153,6 +147,9 @@ cancelDeleteBtn.addEventListener("click", () => {
 
 filters.forEach(btn => {
   btn.addEventListener("click", () => {
+    filters.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
     const filter = btn.dataset.filter;
     const all = loadEntries().filter(e => e.type === "task");
     const filtered = filter === "all" ? all : all.filter(e => e.status === filter);

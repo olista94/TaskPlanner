@@ -14,7 +14,7 @@
     <h1>TaskPlanner</h1>
   </header>
 
-  <!-- Weather - Ahora fuera del main -->
+  <!-- Weather -->
   <section id="weather-section" class="full-width">
     <div class="content-container">
       <div id="weather-container">
@@ -30,7 +30,7 @@
     </div>
   </section>
 
-  <!-- Useless fact - También fuera del main -->
+  <!-- Useless fact -->
   <section id="fact-section" class="full-width">
     <div class="content-container">
       <h2>Random Useless Fact</h2>
@@ -65,10 +65,10 @@
       </form>
     </section>
 
-    <!-- Filter to task -->
+    <!-- Filter -->
     <section id="filters">
       <h3>Filter task by state:</h3>
-      <button data-filter="all">All</button>
+      <button data-filter="all" class="active">All</button>
       <button data-filter="pending">Pending</button>
       <button data-filter="in-progress">In progress</button>
       <button data-filter="completed">Completed</button>
@@ -87,7 +87,7 @@
 
   <script type="module" src="js/main.js"></script>
 
-  <!-- Modal de Edición -->
+  <!-- Edition modal -->
   <div id="edit-modal" class="modal hidden">
     <div class="modal-content">
       <h3>Editar Entrada</h3>
@@ -101,19 +101,18 @@
           <option value="in-progress">In progress</option>
           <option value="completed">Completed</option>
         </select>
-        <button type="submit">Guardar Cambios</button>
-        <button type="button" id="close-edit-modal">Cancelar</button>
+        <button type="submit" class="btn btn-confirm">Guardar Cambios</button>
+        <button type="button" id="close-edit-modal" class="btn btn-cancel">Cancelar</button>
       </form>
     </div>
   </div>
 
-  <!-- Modal de Eliminación -->
+  <!-- Delete Modal -->
   <div id="delete-modal" class="modal hidden">
     <div class="modal-content">
-      <h3>¿Eliminar esta entrada?</h3>
-      <p id="delete-description"></p>
-      <button id="confirm-delete">Eliminar</button>
-      <button id="cancel-delete">Cancelar</button>
+      <h3 id="delete-description"></h3>
+      <button id="confirm-delete" class="btn btn-confirm">Eliminar</button>
+      <button id="cancel-delete" class="btn btn-cancel">Cancelar</button>
     </div>
   </div>
 

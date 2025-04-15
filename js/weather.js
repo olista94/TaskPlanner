@@ -13,7 +13,7 @@ function updateFavoriteStar(city) {
   }
 }
 
-// Función para cargar el tiempo, con ciudad por defecto desde localStorage
+// Load weaher from localstorage or default to Madrid
 export async function loadWeather(city = null) {
   const favCity = localStorage.getItem("favoriteCity");
   const selectedCity = city || favCity || "Madrid";
@@ -53,7 +53,7 @@ export function initWeather() {
     }, 100);
   });
 
-  // ⭐ Lógica de marcar/desmarcar ciudad favorita
+  // Mark or unmark favorite city
   weatherFavorite.addEventListener("click", () => {
     const city = weatherInput.value.trim();
     const currentFav = localStorage.getItem("favoriteCity");

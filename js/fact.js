@@ -15,5 +15,5 @@ export async function loadFact() {
 
 export function initFact() {
   factBtn.addEventListener("click", loadFact);
-  loadFact(); // carga inicial
+  loadFact();
 }
