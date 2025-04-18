@@ -1,6 +1,6 @@
 # 🚀 TaskPlanner
 
-TaskPlanner es una aplicación web full-stack que permite gestionar tareas y eventos y consumo de APIs externas.
+TaskPlanner es una aplicación web que permite gestionar tareas y eventos y consumo de APIs externas.
 
 ---
 
@@ -32,17 +32,11 @@ git clone https://github.com/olista94/TaskPlanner.git
 
 ---
 
-### 2. Iniciar el frontend
-
-Desde un terminal:
-
-```bash
-cd frontend
-```
+### 2. Iniciar la aplicación
 
 Abre `index.html` con **Live Server** o directamente en el navegador:
 
 ```
-http://127.0.0.1:5500/frontend/index.html
+http://127.0.0.1:5500/index.html
 ```
 ---
