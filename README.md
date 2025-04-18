@@ -34,7 +34,7 @@ git clone https://github.com/olista94/TaskPlanner.git
 
 ### 2. Iniciar el frontend
 
-Desde otra terminal:
+Desde un terminal:
 
 ```bash
 cd frontend
